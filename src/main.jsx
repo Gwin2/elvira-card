@@ -1,16 +1,17 @@
 import React from 'react';
 import { createRoot } from 'react-dom/client';
-import { Phone, Send, MessageCircle, Download, Share2, Home, KeyRound, MapPin, Building2, Sparkles } from 'lucide-react';
+import { Phone, Send, MessageCircle, Download, Share2, Home, KeyRound, MapPin, Building2, Sparkles, Users } from 'lucide-react';
 import { motion } from 'framer-motion';
-import { SpeedInsights } from '@vercel/speed-insights/react';
+import photoData from './photoData';
 import './style.css';
 
 const CONTACT = {
   phone: '+7 951 380-11-18',
   phoneHref: 'tel:+79513801118',
-  telegram: 'https://t.me/elvira_nsk',
-  telegramLabel: 't.me/elvira_nsk',
+  telegram: 'https://t.me/elf_doroshenko',
+  telegramLabel: '@elf_doroshenko',
   whatsapp: 'https://wa.me/79513801118',
+  vk: 'https://vk.com/club237619315',
 };
 
 function downloadVCard() {
@@ -22,8 +23,8 @@ function downloadVCard() {
     'ORG:Ключи от Сибири',
     'TITLE:Агент по недвижимости',
     'TEL;TYPE=CELL:+79513801118',
-    'URL:https://t.me/elvira_nsk',
-    'NOTE:Агент по недвижимости в Новосибирске. Помощь в покупке новостроек и продаже недвижимости.',
+    'URL:https://t.me/elf_doroshenko',
+    'NOTE:Агент по недвижимости в Новосибирске. Новостройки, продажа недвижимости, честные обзоры рынка.',
     'END:VCARD',
   ].join('\n');
 
@@ -62,19 +63,19 @@ function App() {
   return (
     <main className="page">
       <motion.section initial={{ opacity: 0, y: 18 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.45 }} className="card">
-        <section className="cover">
-          <div className="photo-placeholder">
-            <div className="portrait-circle">ЭД</div>
+        <a className="cover" href={CONTACT.vk} target="_blank" rel="noreferrer" aria-label="Перейти в сообщество ВК">
+          <div className="photo-panel">
+            <img src={photoData} alt="Эльвира Дорошенко" className="agent-photo" />
             <div className="portrait-text">
               <KeyRound size={28} />
               <span>Ключи от Сибири</span>
             </div>
           </div>
           <div className="cover-box">
-            <div className="cover-title">Ключи от Сибири</div>
-            <p>Полезно о недвижимости Новосибирска, честные обзоры и помощь в поиске дома мечты.</p>
+            <div className="cover-title">Сообщество ВК</div>
+            <p>Нажмите на эту часть визитки, чтобы перейти в сообщество «Ключи от Сибири».</p>
           </div>
-        </section>
+        </a>
 
         <section className="content">
           <header className="brand-row">
@@ -106,8 +107,8 @@ function App() {
           </section>
 
           <section className="link-box">
-            <p>Ссылка на визитку</p>
-            <a href={CONTACT.telegram}><Send size={22} /> {CONTACT.telegramLabel}</a>
+            <p>Telegram</p>
+            <a href={CONTACT.telegram} target="_blank" rel="noreferrer"><Send size={22} /> {CONTACT.telegramLabel}</a>
             <span>Полезно о недвижимости Новосибирска, честные обзоры и помощь в поиске дома мечты.</span>
           </section>
 
@@ -115,12 +116,12 @@ function App() {
             <ActionButton href={CONTACT.phoneHref} icon={Phone} primary>Позвонить</ActionButton>
             <ActionButton href={CONTACT.telegram} icon={Send}>Telegram</ActionButton>
             <ActionButton href={CONTACT.whatsapp} icon={MessageCircle}>WhatsApp</ActionButton>
+            <ActionButton href={CONTACT.vk} icon={Users}>Сообщество ВК</ActionButton>
             <ActionButton icon={Download} onClick={downloadVCard}>Сохранить контакт</ActionButton>
             <ActionButton icon={Share2} onClick={shareCard}>Поделиться визиткой</ActionButton>
           </div>
         </section>
       </motion.section>
-      <SpeedInsights />
     </main>
   );
 }
