@@ -2,6 +2,7 @@ import React from 'react';
 import { createRoot } from 'react-dom/client';
 import { Phone, Send, MessageCircle, Download, Share2, Home, KeyRound, MapPin, Building2, Sparkles } from 'lucide-react';
 import { motion } from 'framer-motion';
+import { SpeedInsights } from '@vercel/speed-insights/react';
 import './style.css';
 
 const CONTACT = {
@@ -119,6 +120,7 @@ function App() {
           </div>
         </section>
       </motion.section>
+      <SpeedInsights />
     </main>
   );
 }
