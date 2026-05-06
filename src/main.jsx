@@ -64,7 +64,7 @@ function App() {
       <motion.section initial={{ opacity: 0, y: 18 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.45 }} className="card">
         <a className="cover" href={CONTACT.vk} target="_blank" rel="noreferrer" aria-label="Перейти в сообщество ВК">
           <div className="photo-panel">
-            <img src="/profile.svg" alt="Эльвира Дорошенко" className="agent-photo" />
+            <img src="/profile.jpg" onError={(event) => { event.currentTarget.src = '/profile.svg'; }} alt="Эльвира Дорошенко" className="agent-photo" />
             <div className="portrait-text">
               <KeyRound size={28} />
               <span>Ключи от Сибири</span>
