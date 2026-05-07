@@ -7,8 +7,8 @@ import './style.css';
 const CONTACT = {
   phone: '+7 951 380-11-18',
   phoneHref: 'tel:+79513801118',
-  telegram: 'https://t.me/elf_doroshenko',
-  telegramLabel: '@elf_doroshenko',
+  telegram: 'https://t.me/keysiberia',
+  telegramLabel: '@keysiberia',
   whatsapp: 'https://wa.me/79513801118',
   vk: 'https://vk.com/club237619315',
 };
@@ -22,7 +22,7 @@ function downloadVCard() {
     'ORG:Ключи от Сибири',
     'TITLE:Агент по недвижимости',
     'TEL;TYPE=CELL:+79513801118',
-    'URL:https://t.me/elf_doroshenko',
+    'URL:https://t.me/keysiberia',
     'NOTE:Агент по недвижимости в Новосибирске. Новостройки, продажа недвижимости, честные обзоры рынка.',
     'END:VCARD',
   ].join('\n');
